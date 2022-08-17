@@ -1,0 +1,356 @@
+/* Reseteos------------- */
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font1);
+}
+/* Colores y fuentes------ */
+:root {
+  --azul: rgb(2, 48, 71);
+  --blanco: rgb(255, 255, 255);
+  --blancoTransp: rgb(255, 255, 255, 0.6);
+  --fontTitulosGrandes: "Rubik Distressed", cursive;
+  --font1: sans-serif;
+}
+
+@media (min-width: 800px) {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    background: var(--azul);
+    box-shadow: 2px 2px 2px 1px aliceblue;
+  }
+  /* Menu--------------- */
+  .hamburger {
+    position: fixed;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    padding: 20px 20px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.25s
+      cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    z-index: 1002;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .hamburger.is-active {
+    background-color: none;
+  }
+  ._layer {
+    background: var(--blanco);
+    margin-bottom: 4px;
+    border-radius: 2px;
+    width: 28px;
+    height: 4px;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    box-shadow: 2px 2px 2px 1px var(--azul);
+  }
+  .hamburger:hover .-top {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  .hamburger:hover .-bottom {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  .hamburger.is-active .-top {
+    -webkit-transform: translateY(200%) rotate(45deg) !important;
+    -ms-transform: translateY(200%) rotate(45deg) !important;
+    transform: translateY(200%) rotate(45deg) !important;
+  }
+  .hamburger.is-active .-mid {
+    opacity: 0;
+  }
+  .hamburger.is-active .-bottom {
+    -webkit-transform: translateY(-200%) rotate(135deg) !important;
+    -ms-transform: translateY(-200%) rotate(135deg) !important;
+    transform: translateY(-200%) rotate(135deg) !important;
+  }
+
+  .menuppal.is_active {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .menuppal {
+    background-color: var(--blanco);
+    bottom: 0;
+    height: 7rem;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 100%;
+    z-index: 1001;
+    box-shadow: 2px 2px 2px 1px var(--azul);
+  }
+  .menuppal ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 0;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .menuppal ul li {
+    list-style: none;
+    text-align: center;
+    color: black;
+    font-size: 1.8rem;
+    line-height: 3em;
+    height: 3em;
+    color: var(--azul);
+    text-transform: none;
+    font-weight: bold;
+  }
+  .menuppal ul li a {
+    text-decoration: none;
+    color: var(--azul);
+  }
+  .menuppal ul li a:hover {
+    text-decoration: none;
+    color: #333;
+  }
+  /* Hero Section */
+  .hero {
+    margin-top: 1px;
+    height: 30rem;
+    width: 100%;
+    background: url(../img/pizzaIzq.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: flex-end;
+    color: var(--blanco);
+  }
+  .hero h2 {
+    margin-top: 3rem;
+    font-family: var(--fontTitulosGrandes);
+    font-size: 4rem;
+    margin-right: 4rem;
+  }
+  .hero p {
+    font-size: 1.5rem;
+    margin-right: 4rem;
+  }
+  .hero__btn {
+    margin-top: 1.5rem;
+    margin-right: 12rem;
+    width: 14rem;
+    height: 4.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.8rem;
+    background: var(--azul);
+    border: none;
+    color: var(--blanco);
+    box-shadow: 1px 1px 1px 1px var(--blanco);
+    cursor: pointer;
+  }
+  .hero__btn:hover {
+    background: var(--blanco);
+    color: var(--azul);
+    box-shadow: 1px 1px 1px 1px var(--azul);
+    font-weight: bold;
+  }
+  /* Catalogo section */
+  .catalogo {
+    height: 34rem;
+    width: 100%;
+    background: url(../img/fondo_pizza.jpg);
+    
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 2rem;
+  }
+  .catalogo h2 {
+    margin-top: 1.5rem;
+    font-size: 3rem;
+    width: auto;
+    padding: 0.8rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background: var(--blancoTransp);
+    color: var(--azul);
+    
+    margin-bottom: 2rem;
+  }
+  .catalogo__pizzasNames {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .pizzaName {
+    width: auto;
+    padding: 0.8rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background: var(--blancoTransp);
+    color: var(--azul);
+    font-weight: bold;
+  }
+  .searchContainer {
+    display: flex;
+    width: 80%;
+    gap: 2rem;
+    height: 8rem;
+    align-items: center;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+  }
+  .search {
+    width: 70%;
+    background: var(--blancoTransp);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    gap: 1.5rem;
+    color: var(--azul);
+    box-shadow: 1px 1px 1px 1px var(--azul);
+    border-radius: 0.6rem;
+  }
+  #buscador {
+    width: 12rem;
+    height: 2rem;
+    border-radius: 0.8rem;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px var(--azul);
+  }
+  .lupa {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  .result {
+    width: 100%;
+    height: 18rem;
+    background: var(--blancoTransp);
+    color: var(--azul);
+    box-shadow: 1px 1px 1px 1px var(--azul);
+    border-radius: 0.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .pizzaBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    height: 100%;
+    width: 100%;
+  }
+  .nombre {
+    font-size: 3rem;
+    font-family: var(--fontTitulosGrandes);
+  }
+  .ingredientes {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+  .priceIMG {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .fotoPizza {
+    width: 9rem;
+    border-radius: 0.8rem;
+    box-shadow: 1px 1px 1px 1px var(--azul);
+  }
+  .precio {
+    margin-top: 1.5rem;
+    font-size: 3rem;
+    width: auto;
+    padding: 0.8rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    color: var(--azul);
+    font-family: var(--fontTitulosGrandes);
+  }
+  .cerrar {
+    position: relative;
+    top: -4rem;
+    left: 14rem;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 1px 1px var(--azul);
+    cursor: pointer;
+  }
+  .result__title {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  .lupaicon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px 1px var(--azul);
+  }
+  .lupaicon:hover {
+    background: var(--azul);
+    color: var(--blanco);
+  }
+  .errores {
+    background: red;
+    color: aliceblue;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+}
